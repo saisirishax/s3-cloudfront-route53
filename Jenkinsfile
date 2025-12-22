@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/Indyalamounika/s3-cloudfront-r53.git',
+                    url: 'https://github.com/Indyalamounika/s3-cloudfront-route53.git',
                     credentialsId: 'aws-credentials'
             }
         }
