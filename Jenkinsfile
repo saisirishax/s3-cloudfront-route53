@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
-        S3_BUCKET = 'mouni-indyala-demo'
+        S3_BUCKET = 'saisreesha-demo'
     }
 
     stages {
@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/Indyalamounika/s3-cloudfront-route53.git',
+                    url: 'https://github.com/saisirishax/s3-cloudfront-route53.git',
                     credentialsId: 'aws-credentials'
             }
         }
@@ -29,7 +29,7 @@ pipeline {
                     sh """
                       aws s3 sync build/ s3://${S3_BUCKET} --delete
                       aws cloudfront create-invalidation \
-                        --distribution-id E1XQAFKJL5S7RP \
+                        --distribution-id E3U7O6UT76PIJ4 \
                         --paths "/*"
                     """
                 }
